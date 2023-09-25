@@ -1,0 +1,291 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+// #region Common Css
+.mainDasboard {
+    .content-box {
+        vertical-align: top;
+        padding: 10px 10px 0;
+    }
+
+    .flex-wrap {
+        flex-wrap: wrap !important;
+    }
+
+    .text-colorBlue {
+        color: #203354;
+    }
+
+    // #endregion Common Css
+
+    // #region Nav Search box
+    .p-input-icon-left .p-inputtext {
+        padding-left: 2.5rem;
+    }
+
+    .p-inputtext {
+        padding: 0.30rem 0.30rem;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.3);
+        border: none;
+
+        &:focus {
+            outline: 0 none;
+            outline-offset: 0;
+            box-shadow: none;
+            border-color: none;
+        }
+
+        &::placeholder {
+            color: #ffffff;
+        }
+
+    }
+
+    .p-input-icon-left>i:first-of-type {
+        left: 0.75rem;
+        color: #ffffff !important;
+    }
+
+    // #endregion Nav Search box
+
+    // #region Paginator
+    .p-paginator {
+        align-items: none;
+        justify-content: none;
+        flex-wrap: none;
+        background: #ffffff;
+        padding: 4px;
+
+
+
+        .p-dropdown {
+            display: none;
+        }
+
+        .p-paginator-pages {
+            .p-paginator-page {
+                color: #203354;
+                min-width: 40px;
+                height: 40px;
+                margin: 0.133rem;
+
+                &.p-highlight {
+                    background: #203354;
+                    border-color: #203354;
+                    color: #fff;
+                }
+
+                &.p-link {
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+
+            }
+
+        }
+
+        .p-paginator-next {
+            color: #203354;
+            min-width: 40px;
+            height: 40px;
+            margin: 0.133rem;
+            border: 1px solid #203354;
+
+            &.p-link {
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .p-paginator-prev {
+            color: #203354;
+            min-width: 40px;
+            height: 40px;
+            margin: 0.133rem;
+            border: 1px solid #203354;
+
+            &.p-link {
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .p-paginator-first {
+            display: none;
+        }
+
+        .p-paginator-last {
+            display: none;
+        }
+
+    }
+
+    .p-dropdown {
+        background: #ffffff;
+        border: 2px solid #203354;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 20px;
+    }
+
+    .paginatorShows {
+        display: flex;
+        justify-content: space-between;
+        padding: 11px;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    // #endregion paginator
+
+    // #region Transparent Lables   
+
+    .transparentBlue {
+        background-color: #2033540f;
+        color: #203354;
+        padding: 10px;
+        border-radius: 3px;
+    }
+
+    .tranparentRed {
+        background-color: rgba(255, 0, 0, 0.09);
+        color: red;
+        padding: 10px;
+        border-radius: 3px;
+    }
+
+    //  #endregion Transparent Lables
+
+    // region Search Box
+    .MainborderBoxForSearchBar {
+        height: 40px;
+        border: 1px solid LightGray;
+        background: White;
+        border-radius: 4px;
+
+        .borderDisplay {
+            border: none !important;
+            outline: none;
+        }
+
+        .searchicon {
+            position: absolute;
+            left: 7px;
+            top: 7px;
+        }
+
+        .filter_clear_btn {
+            height: 20px;
+            border-radius: 3px;
+            font-size: 12px;
+            background-color: rgba(255, 0, 0, 0.09);
+            color: red;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            cursor: pointer;
+            display: flex;
+            padding: 12px 8px;
+        }
+
+        .btn-primary {
+            color: gray !important;
+            background-color: white !important;
+            border-color: white !important;
+
+            &:focus {
+                box-shadow: none
+            }
+
+        }
+
+        @media only screen and (max-width: 768px) and (min-width: 320px) {
+            .dropdown {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .advance_filter {
+                display: block !important;
+            }
+        }
+    }
+
+    //  #endregion Search Boxmy
+
+    //  #endregion Search Bar css
+
+    // #region nav bar
+    .navbar {
+        background-color: #203354;
+        color: white;
+
+        .navbar-brand {
+            color: #fff;
+        }
+
+        .nav-link {
+            color: #fff;
+        }
+
+        .navbar-toggler {
+            color: rgb(192, 192, 192);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .ImageGirl {
+            width: 40px;
+            height: 40px;
+            border: 1px solid white;
+            border-radius: 50%;
+            display: block;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    // #endregion nav bar
+
+    // #region Button css
+    .p-button {
+        background-color: #203354;
+        color: white;
+        border-radius: 2px;
+        border: 1px solid #203354;
+        padding: 5px;
+    }
+
+    .p-ink {
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, .5);
+        border-radius: 100%;
+        transform: scale(0);
+    }
+
+    // #region Button css 
+
+    // #region transparent background
+    .bgtransparent {
+        display: block;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.3);
+        line-height: 32px;
+        border-radius: 50px;
+        font-size: 15px;
+        margin: 0px 5px;
+        cursor: pointer;
+        color: white;
+    }
+
+    // #endregion transparent background
+}

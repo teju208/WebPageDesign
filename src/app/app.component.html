@@ -1,0 +1,182 @@
+<div class="mainDasboard">
+  <!-- #region navigation Bar -->
+  <nav class="navbar navbar-expand-xl">
+    <div class="container-fluid ">
+      <a class="navbar-brand" href="#">Company Technolab</a>
+      <button class="navbar-toggler close-navbar-toggler collapsed" (click)="toggleNavbarCollapsing()" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" [routerLink]="['/#']">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/#']">Items</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" [routerLink]="['/#']" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Sales
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" [routerLink]="['/#']" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Purchases
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" [routerLink]="['/#']" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Inventory Management
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/#']">e-Way Bills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/#']">Reports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/#']">Documents</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/#']"><i class="pi pi-fw pi-ellipsis-h"></i></a>
+          </li>
+        </ul>
+        <div class="icons d-flex align-items-center gap-2 flex-wrap">
+          <div class="bgtransparent">
+            <a class="nav-link" [routerLink]="['/#']"> <i class="pi pi-plus"></i></a>
+          </div>
+          <div>
+            <span class="p-input-icon-left">
+              <i class="pi pi-search"></i>
+              <input pInputText type="text" placeholder="Search Neptune tools " class="" />
+            </span>
+          </div>
+          <div>
+            <i class="pi pi-user-plus"></i>
+          </div>
+          <div>
+            <i class="pi pi-question-circle"></i>
+          </div>
+          <div class="ImageGirl mx-2">
+            <img src="user.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- #endregion navigation Bar -->
+
+  <div class="content-box">
+    <!-- #region listSet -->
+    <div class="listSet d-flex justify-content-between align-items-center flex-wrap">
+      <div class="list">
+        <span><i class="pi pi-home mx-2 text-colorBlue"></i>Dashboard /</span>
+        <span>Purchases /</span>
+        <span>Purchases Order List</span>
+      </div>
+      <div class="Buttons">
+        <p-button styleClass="p-button-secondary">+ Add Purchase Order </p-button>
+      </div>
+    </div>
+    <!-- #endregion listSet -->
+
+
+    <!-- #region search Box  -->
+    <div class="py-3">
+      <div class="MainborderBoxForSearchBar position-relative ">
+        <div class="filter-section d-flex align-items-center justify-content-between">
+          <div class="search-bar"> <span class="searchicon"> <i class="pi pi-search"></i> <input type="text"
+                placeholder="Search Purchase Order" class="borderDisplay" /> </span> </div>
+          <div class="customDropdown d-flex">
+            <div class="dropdown"> <button type="button" class="btn btn-primary dropdown-toggle"
+                data-bs-toggle="dropdown"> Purchase Order </button>
+            </div>
+            <div class="dropdown"> <button type="button" class="btn btn-primary dropdown-toggle"
+                data-bs-toggle="dropdown"> Reference </button>
+            </div>
+            <div class="dropdown"> <button type="button" class="btn btn-primary dropdown-toggle"
+                data-bs-toggle="dropdown">Vendor </button>
+            </div>
+            <div class="dropdown"> <button type="button" class="btn btn-primary dropdown-toggle"
+                data-bs-toggle="dropdown">Status </button>
+            </div>
+            <div class="dropdown"> <button type="button" class="btn btn-primary dropdown-toggle"
+                data-bs-toggle="dropdown">Expected Delivery </button>
+            </div>
+            <div class="advance_filter mt-2 d-none">
+              <i class="pi pi-filter "></i>
+            </div>
+            <a href="javascript:void(0);" class="filter_clear_btn mx-2 mt-2" pTooltip="Clear"
+              tooltipPosition="bottom"><i class="pi pi-times"></i> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- #endregion Search Box -->
+
+    <!-- #region Transparent Lables  -->
+    <div>
+    <ul class="d-flex gap-2 list-unstyled flex-wrap">
+      <li  class="transparentBlue"><i class="pi pi-exclamation-triangle"></i>Issued</li>
+      <li class="tranparentRed "><i class="pi pi-trash"></i> Delete</li>
+      <li class="transparentBlue"><i class="pi pi-clone"></i> Clone</li>
+      <li class="transparentBlue "><i class="pi pi-book"></i> Convert To Bill</li>
+    </ul>
+    </div>
+    <!-- #endregion Transparent Lables -->
+
+    <!-- #region Table  -->
+    <p-table [value]="products">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="Sr.No"> <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            Sr.No<p-sortIcon field="SrNo">
+
+            </p-sortIcon>
+          </th>
+          <th pSortableColumn="Date">Date <p-sortIcon field="Date"></p-sortIcon></th>
+          <th pSortableColumn="PO">PO <p-sortIcon field="Date"></p-sortIcon></th>
+          <th pSortableColumn="Reference">Reference <p-sortIcon field="Reference"></p-sortIcon></th>
+          <th pSortableColumn="Vendor">Vendor <p-sortIcon field="Vendor"></p-sortIcon></th>
+          <th pSortableColumn="Status">Status <p-sortIcon field="Status"></p-sortIcon></th>
+          <th pSortableColumn="Amount">Amount <p-sortIcon field="Amount"></p-sortIcon></th>
+          <th pSortableColumn="Date">Date <p-sortIcon field="Date"></p-sortIcon></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td><p-tableCheckbox [value]="product" class="me-2"></p-tableCheckbox>{{ product.SrNo }}</td>
+          <td>{{ product.Date }}</td>
+          <td>{{ product.PO }}</td>
+          <td>{{ product.Reference }}</td>
+          <td>{{ product.Vendor }}</td>
+          <td>{{ product.Status }}</td>
+          <td>{{ product.Amount }}</td>
+          <td>{{ product.date }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <!-- #region Table  -->
+    <div class="paginatorShows">
+      <div>
+        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"
+          [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+      </div>
+      <div class="showEntries">
+        <span>Show </span>
+        <p-dropdown optionValue="value" [(ngModel)]="rows2" (ngModelChange)="first2 = 0" [options]="options"
+          optionLabel="label"></p-dropdown>
+        <span>entries </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
